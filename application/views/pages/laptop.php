@@ -127,7 +127,7 @@
               <div class="col-sm-8">
                 <select name="pic" class="form-control select2" style="width:100%;">
                   <option value="">-</option>
-                  <?php foreach($karyawans as $karyawan): ?>
+                  <?php foreach ($karyawans as $karyawan) : ?>
                     <option value="<?= $karyawan['id']; ?>"><?= $karyawan['nama_lengkap']; ?></option>
                   <?php endforeach; ?>
                 </select>
@@ -236,7 +236,7 @@
         <div class="row">
           <div class="col-md-6">Download File Contoh</div>
           <div class="col-md-6">
-            <a href="<?=base_url('assets/csv/jenisBarang/masterJenisBarang.csv')?>" download="Db Qrcisoka - Master Import Jenis Barang.csv">
+            <a href="<?= base_url('assets/csv/jenisBarang/masterJenisBarang.csv') ?>" download="Db Qrcisoka - Master Import Jenis Barang.csv">
               <button type="button" class="btn btn-sm btn-success" id="downloadFile">
                 Download
               </button>
@@ -248,8 +248,8 @@
         <?php echo form_open_multipart(site_url('laptop/import')); ?>
         <div class="row">
           <div class="form-group col-md-12">
-              <label for="import_laptop">Upload File (.csv)</label>
-              <input type="file" class="form-control-file" accept="text/csv" id="import_laptop" name="import_laptop">
+            <label for="import_laptop">Upload File (.csv)</label>
+            <input type="file" class="form-control-file" accept="text/csv" id="import_laptop" name="import_laptop">
           </div>
         </div>
       </div>
@@ -319,7 +319,7 @@ foreach ($laptops as $laptop) :
                 <div class="col-sm-8">
                   <select class="form-control select2" style="width:100%;" disabled>
                     <option value="">-</option>
-                    <?php foreach($karyawans as $karyawan): ?>
+                    <?php foreach ($karyawans as $karyawan) : ?>
                       <option <?= ($karyawan['id'] == $laptop['id_karyawan']) ? "selected" : ""; ?> value="<?= $karyawan['id']; ?>"><?= $karyawan['nama_lengkap']; ?></option>
                     <?php endforeach; ?>
                   </select>
@@ -506,8 +506,8 @@ foreach ($laptops as $laptop) :
   </div>
   <!-- /.MODAL DETAIL -->
 
-    <!-- MODAL EDIT -->
-    <div class="modal fade" id="edit_data_modal<?= $laptop['id']; ?>">
+  <!-- MODAL EDIT -->
+  <div class="modal fade" id="edit_data_modal<?= $laptop['id']; ?>">
     <div class="modal-dialog modal-lg">
       <div class="modal-content">
         <div class="modal-header">
@@ -523,9 +523,9 @@ foreach ($laptops as $laptop) :
             </div>
             <div class="col-md-8 d-flex flex-column">
               <div class="form-group row">
-                <label class="col-sm-2 col-form-label" for="model<?=$laptop['id'];?>">Laptop</label>
+                <label class="col-sm-2 col-form-label" for="model<?= $laptop['id']; ?>">Laptop</label>
                 <div class="col-sm-4">
-                  <select name="merk<?=$laptop['id'];?>" class="form-control select2" style="width:100%;">
+                  <select name="merk<?= $laptop['id']; ?>" class="form-control select2" style="width:100%;">
                     <option <?= ($laptop['merk'] == "Asus" ? "selected" : ""); ?> value="Asus">Asus</option>
                     <option <?= ($laptop['merk'] == "Lenovo" ? "selected" : ""); ?> value="Lenovo">Lenovo</option>
                     <option <?= ($laptop['merk'] == "Dell" ? "selected" : ""); ?> value="Dell">Dell</option>
@@ -535,34 +535,34 @@ foreach ($laptops as $laptop) :
                   </select>
                 </div>
                 <div class="col-sm-6">
-                  <input type="text" class="form-control" id="model<?=$laptop['id'];?>" name="model<?=$laptop['id'];?>" value="<?= $laptop['model']; ?>">
+                  <input type="text" class="form-control" id="model<?= $laptop['id']; ?>" name="model<?= $laptop['id']; ?>" value="<?= $laptop['model']; ?>">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-4 col-form-label" for="serial_number<?=$laptop['id'];?>">Serial Number</label>
+                <label class="col-sm-4 col-form-label" for="serial_number<?= $laptop['id']; ?>">Serial Number</label>
                 <div class="col-sm-8">
-                  <input type="text" class="form-control" id="serial_number<?=$laptop['id'];?>" name="serial_number<?=$laptop['id'];?>" value="<?= $laptop['serial_number'] ?>">
+                  <input type="text" class="form-control" id="serial_number<?= $laptop['id']; ?>" name="serial_number<?= $laptop['id']; ?>" value="<?= $laptop['serial_number'] ?>">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-4 col-form-label" for="pic<?=$laptop['id'];?>">PIC</label>
+                <label class="col-sm-4 col-form-label" for="pic<?= $laptop['id']; ?>">PIC</label>
                 <div class="col-sm-8">
-                  <select name="pic<?=$laptop['id'];?>" class="form-control select2" style="width:100%;">
+                  <select name="pic<?= $laptop['id']; ?>" class="form-control select2" style="width:100%;">
                     <option value="">-</option>
-                    <?php foreach($karyawans as $karyawan): ?>
+                    <?php foreach ($karyawans as $karyawan) : ?>
                       <option <?= ($karyawan['id'] == $laptop['id_karyawan']) ? "selected" : ""; ?> value="<?= $karyawan['id']; ?>"><?= $karyawan['nama_lengkap']; ?></option>
                     <?php endforeach; ?>
                   </select>
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-4 col-form-label" for="tgl_pembelian<?=$laptop['id'];?>">Tgl Pembelian</label>
+                <label class="col-sm-4 col-form-label" for="tgl_pembelian<?= $laptop['id']; ?>">Tgl Pembelian</label>
                 <div class="col-sm-8">
-                  <input type="date" class="form-control" id="tgl_pembelian<?=$laptop['id'];?>" name="tgl_pembelian<?=$laptop['id'];?>" value="<?= $laptop['tgl_pembelian'] ?>">
+                  <input type="date" class="form-control" id="tgl_pembelian<?= $laptop['id']; ?>" name="tgl_pembelian<?= $laptop['id']; ?>" value="<?= $laptop['tgl_pembelian'] ?>">
                 </div>
               </div>
               <div class="form-group row">
-                <label class="col-sm-4 col-form-label" for="kondisi<?=$laptop['id'];?>">Kondisi *</label>
+                <label class="col-sm-4 col-form-label" for="kondisi<?= $laptop['id']; ?>">Kondisi *</label>
                 <div class="col-sm-8">
                   <select name="kondisi<?= $laptop['id']; ?>" class="form-control select2" style="width:100%;">
                     <option <?= ($laptop['kondisi'] == "good") ? "selected" : ""; ?> value="good">good</option>
@@ -576,59 +576,59 @@ foreach ($laptops as $laptop) :
           <hr>
           <div class="mb-3 container">
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="processor<?=$laptop['id'];?>">Processor</label>
+              <label class="col-sm-4 col-form-label" for="processor<?= $laptop['id']; ?>">Processor</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="processor<?=$laptop['id'];?>" name="processor<?=$laptop['id'];?>" value="<?= $laptop['processor']; ?>">
+                <input type="text" class="form-control" id="processor<?= $laptop['id']; ?>" name="processor<?= $laptop['id']; ?>" value="<?= $laptop['processor']; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="memory<?=$laptop['id'];?>">Memory</label>
+              <label class="col-sm-4 col-form-label" for="memory<?= $laptop['id']; ?>">Memory</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="memory<?=$laptop['id'];?>" name="memory<?=$laptop['id'];?>" value="<?= $laptop['memory']; ?>">
+                <input type="text" class="form-control" id="memory<?= $laptop['id']; ?>" name="memory<?= $laptop['id']; ?>" value="<?= $laptop['memory']; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="display<?=$laptop['id'];?>">Display</label>
+              <label class="col-sm-4 col-form-label" for="display<?= $laptop['id']; ?>">Display</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="display<?=$laptop['id'];?>" name="display<?=$laptop['id'];?>" value="<?= $laptop['display']; ?>">
+                <input type="text" class="form-control" id="display<?= $laptop['id']; ?>" name="display<?= $laptop['id']; ?>" value="<?= $laptop['display']; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="disk_type_1<?=$laptop['id'];?>">Disk 1</label>
+              <label class="col-sm-4 col-form-label" for="disk_type_1<?= $laptop['id']; ?>">Disk 1</label>
               <div class="col-sm-4">
-                <select name="disk_type_1<?=$laptop['id'];?>" class="form-control select2" style="width:100%;">
+                <select name="disk_type_1<?= $laptop['id']; ?>" class="form-control select2" style="width:100%;">
                   <option <?= ($laptop['disk_type_1'] == "" ? "selected" : ""); ?> value="">-</option>
                   <option <?= ($laptop['disk_type_1'] == "SSD" ? "selected" : ""); ?> value="SSD">SSD</option>
                   <option <?= ($laptop['disk_type_1'] == "HDD" ? "selected" : ""); ?> value="HDD">HDD</option>
                 </select>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="disk_size_1" name="disk_size_1<?=$laptop['id'];?>" value="<?= ($laptop['disk_size_1'] != "") ? $laptop['disk_size_1'] . "Gb" : "-"; ?>">
+                <input type="text" class="form-control" id="disk_size_1" name="disk_size_1<?= $laptop['id']; ?>" value="<?= ($laptop['disk_size_1'] != "") ? $laptop['disk_size_1'] . "Gb" : "-"; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="disk_type_2<?=$laptop['id'];?>">Disk 2</label>
+              <label class="col-sm-4 col-form-label" for="disk_type_2<?= $laptop['id']; ?>">Disk 2</label>
               <div class="col-sm-4">
-                <select name="disk_type_2<?=$laptop['id'];?>" class="form-control select2" style="width:100%;">
+                <select name="disk_type_2<?= $laptop['id']; ?>" class="form-control select2" style="width:100%;">
                   <option <?= ($laptop['disk_type_2'] == "" ? "selected" : ""); ?> value="">-</option>
                   <option <?= ($laptop['disk_type_2'] == "SSD" ? "selected" : ""); ?> value="SSD">SSD</option>
                   <option <?= ($laptop['disk_type_2'] == "HDD" ? "selected" : ""); ?> value="HDD">HDD</option>
                 </select>
               </div>
               <div class="col-sm-4">
-                <input type="text" class="form-control" id="disk_size_2" name="disk_size_2<?=$laptop['id'];?>" value="<?= ($laptop['disk_size_2'] != "") ? $laptop['disk_size_2'] . "Gb" : "-"; ?>">
+                <input type="text" class="form-control" id="disk_size_2" name="disk_size_2<?= $laptop['id']; ?>" value="<?= ($laptop['disk_size_2'] != "") ? $laptop['disk_size_2'] . "Gb" : "-"; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="gpu_1<?=$laptop['id'];?>">GPU 1</label>
+              <label class="col-sm-4 col-form-label" for="gpu_1<?= $laptop['id']; ?>">GPU 1</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="gpu_1<?=$laptop['id'];?>" name="gpu_1<?=$laptop['id'];?>" value="<?= ($laptop['gpu_1'] != "") ? $laptop['gpu_1'] : "-"; ?>">
+                <input type="text" class="form-control" id="gpu_1<?= $laptop['id']; ?>" name="gpu_1<?= $laptop['id']; ?>" value="<?= ($laptop['gpu_1'] != "") ? $laptop['gpu_1'] : "-"; ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label class="col-sm-4 col-form-label" for="gpu_2<?=$laptop['id'];?>">GPU 2</label>
+              <label class="col-sm-4 col-form-label" for="gpu_2<?= $laptop['id']; ?>">GPU 2</label>
               <div class="col-sm-8">
-                <input type="text" class="form-control" id="gpu_2<?=$laptop['id'];?>" name="gpu_2<?=$laptop['id'];?>" value="<?= ($laptop['gpu_2'] != "") ? $laptop['gpu_2'] : ""; ?>">
+                <input type="text" class="form-control" id="gpu_2<?= $laptop['id']; ?>" name="gpu_2<?= $laptop['id']; ?>" value="<?= ($laptop['gpu_2'] != "") ? $laptop['gpu_2'] : ""; ?>">
               </div>
             </div>
           </div>

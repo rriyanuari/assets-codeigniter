@@ -87,6 +87,9 @@ defined('BASEPATH') or exit('No direct script access allowed');
             <li class="<?= $this->uri->segment(1) == 'laptop' ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('laptop'); ?>">
               <i class="fas fa-laptop"></i> <span>Laptop</span></a>
             </li>
+            <li class="<?= $this->uri->segment(1) == 'printer' ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('printer'); ?>">
+              <i class="fas fa-print"></i> <span>printer</span></a>
+            </li>
 
             <li class="menu-header">Berita Acara</li>
             <li class="<?= $this->uri->segment(1) == 'serah-terima' ? 'active' : ''; ?>"><a class="nav-link" href="<?= base_url('serah-terima'); ?>">

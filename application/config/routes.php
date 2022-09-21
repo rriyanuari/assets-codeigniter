@@ -19,7 +19,15 @@ $route['dashboard'] = 'dashboard';
   $route['laptop/delete'] = 'laptop/delete';
   $route['laptop/import'] = 'laptop/import';
   
-// Laptop
+
+// Printer
+  $route['printer'] = 'printer';
+  $route['printer/create'] = 'printer/create';
+  $route['printer/edit'] = 'printer/edit';
+  $route['printer/delete'] = 'printer/delete';
+  $route['printer/import'] = 'printer/import';
+
+// Serah - Terima
   $route['serah-terima'] = 'serah_terima';
   $route['serah-terima/create'] = 'serah_terima/create';
   $route['serah-terima/edit'] = 'serah_terima/edit';
